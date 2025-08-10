@@ -26,12 +26,19 @@ public class Exercicio1 {
                 break;
             case 3:
                 numeros = lerConjuntoDeInteirosIndefinidos();
+                System.out.println(numeros);
                 menu();
                 break;
-            case 4: 
+            case 4:
+                numeros = lerConjuntoDeInteirosIndefinidos();
                 System.out.println(somaNumeros(numeros));
+                menu();
+            case 5:
+                numeros = lerConjuntoDeInteirosIndefinidos();
+                int[] resposta = verificaParImpar(numeros);
+                System.out.println("Pares: " + resposta[0] + "\n" + "Impares: " + resposta[1]);
             case 0:
-
+                System.out.println("Saindo...");
                 break;
         }
     }
@@ -41,7 +48,6 @@ public class Exercicio1 {
         System.out.println(msg);
         return Integer.parseInt(sc.nextLine());
     }
-
 
     static int dividirDoisNumeros() {
         int n1 = lerInteiro("Digite o primeiro numero");
@@ -76,11 +82,25 @@ public class Exercicio1 {
         return maior;
     }
 
-    static int somaNumeros(int[] numeros){
+    static int somaNumeros(int[] numeros) {
         int soma = 0;
         for (int i = 0; i < numeros.length; i++) {
             soma += numeros[i];
         }
         return soma;
     }
+
+    static int[] verificaParImpar(int[] numeros) {
+        int pares = 0;
+        int impares = 0;
+        for (int i = 0; i < numeros.length; i++) {
+            if (numeros[i] % 2 == 0) {
+                pares++;
+            } else {
+                impares++;
+            }
+        }
+        return new int[] { pares, impares };
+    }
+
 }
