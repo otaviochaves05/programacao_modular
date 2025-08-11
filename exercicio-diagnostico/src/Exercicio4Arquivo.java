@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Exercicio4Arquivo {
     public static void main(String[] args) throws IOException {
-        String nomeArquivo = "exercicio4Arquivo";
+        String nomeArquivo = "exercicio4Arquivo.txt";
         BufferedReader reader = new BufferedReader(new FileReader(nomeArquivo));
         String mensagem = reader.readLine();
         String[] mensagemDividida = divideString(mensagem);
